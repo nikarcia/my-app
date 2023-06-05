@@ -1,0 +1,13 @@
+<h2>Crear Cliente</h2>
+
+<form (ngSubmit)="enviarDatos()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+  </div>
+  <button type="submit" [disabled]="nombre === ''">Guardar</button>
+</form>
+
+<div *ngIf="mensajeGuardado!=''" class="mensaje-exito">
+  {{mensajeGuardado}}
+</div>

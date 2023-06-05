@@ -1,0 +1,18 @@
+<app-form-crear-cliente></app-form-crear-cliente>
+<h2>Lista de Clientes</h2>
+<div class="w3-container">
+  <table class="w3-table-all">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="w3-hover-green" *ngFor="let cliente of clientes">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nombre }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

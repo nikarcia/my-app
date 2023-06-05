@@ -1,0 +1,49 @@
+<app-formulario/>
+<h2>Planes de Entrega Terrestres</h2>
+<input type="text" [(ngModel)]="numeroGuia" placeholder="numeroGuia">
+<input type="text" [(ngModel)]="cantidadProducto" placeholder="cantidadProducto">
+<input type="text" [(ngModel)]="fechaRegistro" placeholder="fechaRegistro">
+<input type="text" [(ngModel)]="fechaEntrega" placeholder="fechaEntrega">
+<input type="text" [(ngModel)]="precioEnvio" placeholder="precioEnvio">
+<input type="text" [(ngModel)]="precioEnvioConDescuento" placeholder="precioEnvioConDescuento">
+<input type="text" [(ngModel)]="placaVehiculo" placeholder="placaVehiculo">
+<input type="text" [(ngModel)]="tipoproducto" placeholder="tipoproducto">
+<input type="text" [(ngModel)]="lugarAlmacenamiento" placeholder="lugarAlmacenamiento">
+<input type="text" [(ngModel)]="IdCliente" placeholder="IdCliente">
+<input type="text" [(ngModel)]="nombreCliente" placeholder="nombreCliente">
+<button (click)="consultarPorFiltros()">Consultar</button>
+
+<div class="w3-container">
+  <table class="w3-table-all">
+  <thead>
+    <tr>
+      <th>Número de Guía</th>
+      <th>Cantidad de Producto</th>
+      <th>Fecha de Registro</th>
+      <th>Fecha de Entrega</th>
+      <th>Precio de Envío</th>
+      <th>Precio de Envío con Descuento</th>
+      <th>Placa del Vehículo</th>
+      <th>Tipo de Producto</th>
+      <th>Bodega</th>
+      <th>Cliente id </th>
+      <th>Nombre Cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="w3-hover-green" *ngFor="let envio of planesEntrega">
+      <td>{{ envio.numeroGuia }}</td>
+      <td>{{ envio.cantidadProducto }}</td>
+      <td>{{ envio.fechaRegistro }}</td>
+      <td>{{ envio.fechaEntrega }}</td>
+      <td>{{ envio.precioEnvio }}</td>
+      <td>{{ envio.precioEnvioConDescuento }}</td>
+      <td>{{ envio.placaVehiculo }}</td>
+      <td>{{ envio.tipoproducto }}</td>
+      <td>{{ envio.lugarAlmacenamiento }}</td>
+      <td>{{ envio.idDelCliente }}</td>
+      <td>{{ envio.nombreCliente }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

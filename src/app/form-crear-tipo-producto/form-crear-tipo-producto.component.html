@@ -1,0 +1,25 @@
+<h2>Crear Tipo de Producto</h2>
+
+<form (ngSubmit)="enviarDatos()" #formulario="ngForm">
+  <div>
+    <label for="cliente">Cliente:</label>
+    <select id="cliente" [(ngModel)]="crearProductoRequest.clienteId" name="clienteId" required>
+      <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="logistica">Logistica:</label>
+    <select id="logistica" [(ngModel)]="crearProductoRequest.logistica" name="logistica" required>
+      <option *ngFor="let logistica of logisticaOpciones" [value]="logistica">{{ logistica }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="crearProductoRequest.nombre" name="nombre" required>
+  </div>
+
+  <button type="submit" [disabled]="!formulario.valid">Guardar</button>
+</form>
+<div *ngIf="mensajeGuardado!=''" class="mensaje-exito">
+  {{mensajeGuardado}}
+</div>

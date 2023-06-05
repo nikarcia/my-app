@@ -1,0 +1,22 @@
+<app-form-crear-tipo-producto></app-form-crear-tipo-producto>
+<h2>Lista de Tipos de productos</h2>
+<div class="w3-container">
+  <table class="w3-table-all">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Logística</th>
+      <th>Cliente ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="w3-hover-green" *ngFor="let tp of productos">
+      <td>{{ tp.id }}</td>
+      <td>{{ tp.nombre }}</td>
+      <td>{{ tp.logistica }}</td>
+      <td>{{ tp.clienteId }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

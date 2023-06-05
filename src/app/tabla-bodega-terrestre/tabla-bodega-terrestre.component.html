@@ -1,0 +1,23 @@
+<app-form-crear-bodega-terrestre></app-form-crear-bodega-terrestre>
+<h2>Lista de Puertos/Bodegas</h2>
+<div class="w3-container">
+  <table class="w3-table-all">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Logística</th>
+      <th>Cliente ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="w3-hover-green" *ngFor="let lugar of lugaresAlmacenamiento">
+      <td>{{ lugar.id }}</td>
+      <td>{{ lugar.nombre }}</td>
+      <td>{{ lugar.direccion }}</td>
+      <td>{{ lugar.logistica }}</td>
+      <td>{{ lugar.clienteId }}</td>
+    </tr>
+  </tbody>
+</table>

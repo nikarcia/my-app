@@ -1,0 +1,46 @@
+<h2>Crear plan de entrega terrestre</h2>
+<form (ngSubmit)="onSubmit()" #formulario="ngForm">
+  <div>
+    <label for="cliente">Cliente:</label>
+    <select id="cliente" [(ngModel)]="datosFormulario.clienteId" name="clienteId" (change)="cargarBodegasYTiposProductos()" required>
+      <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="cliente">Tipo Producto:</label>
+    <select id="cliente" [(ngModel)]="datosFormulario.tipoProducto" name="tipoProducto" [disabled]="!datosFormulario.clienteId" required>
+      <option *ngFor="let tp of tiposProductos" [value]="tp.id">{{ tp.nombre }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="cliente">Bodega</label>
+    <select id="cliente" [(ngModel)]="datosFormulario.bodegaEntrega" name="bodegaEntrega" [disabled]="!datosFormulario.clienteId" required>
+      <option *ngFor="let bodega of bodegasTerrestres" [value]="bodega.id">{{ bodega.nombre }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="cantidadProducto">Cantidad de Producto:</label>
+    <input type="number" id="cantidadProducto" name="cantidadProducto" [(ngModel)]="datosFormulario.cantidadProducto" required>
+  </div>
+  <div>
+    <label for="fechaRegistro">Fecha de Registro:</label>
+    <input type="date" id="fechaRegistro" name="fechaRegistro" [(ngModel)]="datosFormulario.fechaRegistro" required>
+  </div>
+  <div>
+    <label for="fechaEntrega">Fecha de Entrega:</label>
+    <input type="date" id="fechaEntrega" name="fechaEntrega" [(ngModel)]="datosFormulario.fechaEntrega" required>
+  </div>
+  <div>
+    <label for="precioEnvio">Precio de Envío:</label>
+    <input type="number" id="precioEnvio" name="precioEnvio" [(ngModel)]="datosFormulario.precioEnvio" required>
+  </div>
+  <div>
+    <label for="placaVehiculo">Placa del Vehículo:</label>
+    <input type="text" id="placaVehiculo" name="placaVehiculo" [(ngModel)]="datosFormulario.placaVehiculo" required>
+  </div>
+  <button type="submit" [disabled]="!formulario.valid">Guardar</button>
+</form>
+<div *ngIf="mensajeGuardado!=''" class="mensaje-exito">
+  {{mensajeGuardado}}
+</div>
