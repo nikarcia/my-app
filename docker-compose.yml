@@ -1,0 +1,9 @@
+version: '2'
+services:
+  app:
+    image: 'frontend-angular:latest'
+    build:
+      context: .
+    container_name: frontend-angular
+    ports:
+      - 80:80
