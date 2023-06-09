@@ -29,7 +29,7 @@ export class FormCrearTipoProductoComponent implements OnInit {
   }
 
   obtenerClientes() {
-    const url = 'http://localhost:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
+    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
     this.http.get<any>(url).subscribe(
       response => {
         this.clientes = response;
@@ -41,7 +41,7 @@ export class FormCrearTipoProductoComponent implements OnInit {
   }
 
   enviarDatos() {
-    const url = 'http://localhost:8080/api/tipo_producto'; // Reemplazar con la URL correcta de tu API REST
+    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/tipo_producto'; // Reemplazar con la URL correcta de tu API REST
 
     this.http.post(url, this.crearProductoRequest).subscribe(
       response => {

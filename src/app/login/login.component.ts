@@ -21,7 +21,7 @@ export class LoginComponent {
   }
 
   iniciarSesion() {
-    const url = 'http://localhost:8080/auth/login'; // Reemplaza con la URL de tu API de autenticación
+    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/auth/login'; // Reemplaza con la URL de tu API de autenticación
     const body = {
       nombreUsuario: this.nombreUsuario,
       password: this.password

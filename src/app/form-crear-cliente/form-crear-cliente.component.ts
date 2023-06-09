@@ -17,7 +17,7 @@ export class FormCrearClienteComponent {
 
 
   enviarDatos() {
-    const url = 'http://localhost:8080/api/cliente'; // Reemplaza con la URL correcta de tu API REST para crear un cliente
+    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/cliente'; // Reemplaza con la URL correcta de tu API REST para crear un cliente
 
     const datos = {
       nombre: this.nombre

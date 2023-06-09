@@ -21,7 +21,7 @@ export class PlanEntregaMaritimaComponent {
     constructor(private http: HttpClient) {}
   
     ngOnInit() {
-      const url = 'http://localhost:8080/api/planes-entrega-maritima'; // Reemplaza con la URL correcta de tu API REST para obtener la lista de planes de entrega
+      const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/planes-entrega-maritima'; // Reemplaza con la URL correcta de tu API REST para obtener la lista de planes de entrega
   
       this.http.get<any>(url).subscribe(
         response => {
@@ -72,7 +72,7 @@ export class PlanEntregaMaritimaComponent {
       }
     
       // Realiza la petición HTTP GET con los parámetros de consulta
-      this.http.get<any[]>('http://localhost:8080/api/planes-entrega-maritima', { params }).subscribe(
+      this.http.get<any[]>('http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/planes-entrega-maritima', { params }).subscribe(
         (data) => {
           // Aquí puedes manejar la respuesta del API
           console.log(data);

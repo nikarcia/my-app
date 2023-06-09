@@ -12,7 +12,7 @@ export class TablaBodegaTerrestreComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    const url = 'http://localhost:8080/api/lugar_almacenamiento'; // Reemplaza con la URL correcta de tu API REST para obtener la lista de bodegas terrestres
+    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/lugar_almacenamiento'; // Reemplaza con la URL correcta de tu API REST para obtener la lista de bodegas terrestres
 
     this.http.get<any>(url).subscribe(
       response => {
