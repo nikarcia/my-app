@@ -18,7 +18,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { PlanEntregaMaritimaComponent } from './plan-entrega-maritima/plan-entrega-maritima.component';
 import { FormCrearPlanEntregaMaritimaComponent } from './form-crear-plan-entrega-maritima/form-crear-plan-entrega-maritima.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +33,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TablaBodegaTerrestreComponent,
     PlanEntregaMaritimaComponent,
     FormCrearPlanEntregaMaritimaComponent,
-    LoginComponent,
-    DashboardComponent,
-  ],
+    LoginComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
