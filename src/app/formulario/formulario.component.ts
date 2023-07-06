@@ -43,7 +43,7 @@ export class FormularioComponent {
   }
 
   obtenerClientes() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
+    const url = 'http://localhost:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
     this.http.get<any>(url).subscribe(
       response => {
         this.clientes = response;
@@ -55,7 +55,7 @@ export class FormularioComponent {
   }
 
   obtenerTiposProducto() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/tipo_producto/cliente/'+this.datosFormulario.clienteId+'/logistica/TERRESTRE'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
+    const url = 'http://localhost:8080/api/tipo_producto/cliente/'+this.datosFormulario.clienteId+'/logistica/TERRESTRE'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
 
     this.http.get<any>(url).subscribe(
       response => {
@@ -68,7 +68,7 @@ export class FormularioComponent {
   }
 
   obtenerBodegas() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/lugar_almacenamiento/cliente/'+this.datosFormulario.clienteId+'/logistica/TERRESTRE'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
+    const url = 'http://localhost:8080/api/lugar_almacenamiento/cliente/'+this.datosFormulario.clienteId+'/logistica/TERRESTRE'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
 
     this.http.get<any>(url).subscribe(
       response => {
@@ -82,7 +82,7 @@ export class FormularioComponent {
   }
 
   onSubmit() {
-    this.http.post('http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/planes-entrega-terrestre', this.datosFormulario)
+    this.http.post('http://localhost:8080/api/planes-entrega-terrestre', this.datosFormulario)
       .subscribe(
         (response) => {
           console.log('Guardado exitoso');

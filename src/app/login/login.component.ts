@@ -12,16 +12,16 @@ export class LoginComponent {
 
   nombreUsuario: string = '';
   password: string = '';
-  loggedIn: boolean = false; 
+  loggedIn: String | null ; 
   guardadoExitoso: boolean = false;
   mensajeGuardado : String =''
   
   constructor(private http: HttpClient, private router: Router) { 
-
+    this.loggedIn = sessionStorage.getItem('login');
   }
 
   iniciarSesion() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/auth/login'; // Reemplaza con la URL de tu API de autenticación
+    const url = 'http://localhost:8080/auth/login'; // Reemplaza con la URL de tu API de autenticación
     const body = {
       nombreUsuario: this.nombreUsuario,
       password: this.password
@@ -33,17 +33,17 @@ export class LoginComponent {
       (response: any) => {
         // Manejar la respuesta de la API de autenticación
         console.log('Inicio de sesión exitoso', response);
-        this.loggedIn = true;
+        this.loggedIn = 'true';
         console.log('Inicio de sesión exitoso', response);
-        localStorage.setItem('login', 'true'); // Guardar el nombre de usuario en el almacenamiento local
-        localStorage.setItem('token', response.token); // Guardar el token de sesión en el almacenamiento local
-        this.router.navigate(['/']); // Redirigir a la página de dashboard después del inicio de sesión exitoso
+        sessionStorage.setItem('login', 'true'); // Guardar el nombre de usuario en el almacenamiento local
+        sessionStorage.setItem('token', response.token); // Guardar el token de sesión en el almacenamiento local
         this.mensajeGuardado = "Exito: " + JSON.stringify(response)
+        window.location.reload();
 
       },
       (error) => {
-        localStorage.setItem('login', 'false'); // Guardar el nombre de usuario en el almacenamiento local
         // Manejar errores de la API de autenticación
+        sessionStorage.setItem('login', 'false'); // Guardar el nombre de usuario en el almacenamiento local
         console.error('Error al iniciar sesión', error);
         this.mensajeGuardado = "Error: " + JSON.stringify(error)
       }

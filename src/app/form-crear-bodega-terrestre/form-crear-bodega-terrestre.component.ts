@@ -28,7 +28,7 @@ guardadoExitoso: boolean = false;
   }
 
   obtenerClientes() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
+    const url = 'http://localhost:8080/api/cliente'; // Reemplazar con la URL correcta de tu API REST para obtener la lista de clientes
 
     this.http.get<any>(url).subscribe(
       response => {
@@ -42,7 +42,7 @@ guardadoExitoso: boolean = false;
   }
 
   enviarDatos() {
-    const url = 'http://ec2-3-133-155-146.us-east-2.compute.amazonaws.com:8080/api/lugar_almacenamiento'; // Reemplazar con la URL correcta de tu API REST
+    const url = 'http://localhost:8080/api/lugar_almacenamiento'; // Reemplazar con la URL correcta de tu API REST
     this.http.post(url,this.crearLugarAlmacenamientoRequest).subscribe
     (response => {
         console.log('Tipo de Producto creado exitosamente', response);

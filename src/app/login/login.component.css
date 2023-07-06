@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Otros estilos para el contenedor principal */
+  }
+  
+  .form-container {
+    text-align: center;
+    /* Otros estilos para el contenedor del formulario */
+  }
+  
